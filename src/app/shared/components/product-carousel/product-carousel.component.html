@@ -1,0 +1,76 @@
+<section class="pc" *ngIf="loading">
+  <div class="pc__skeleton-list">
+    <div class="pc-skel" *ngFor="let _ of [1,2,3]">
+      <div class="skel skel-title"></div>
+      <div class="skel skel-id"></div>
+      <div class="skel skel-line"></div>
+      <div class="skel skel-label"></div>
+      <div class="skel skel-value"></div>
+      <div class="skel skel-badge"></div>
+      <div class="skel skel-bottom"></div>
+    </div>
+  </div>
+</section>
+
+<section class="pc pc--error" *ngIf="!loading && error">
+  <p class="pc__error">{{ error }}</p>
+</section>
+
+<section class="pc" *ngIf="!loading && cards.length">
+  <button class="pc__nav pc__nav--left" type="button" (click)="prev()" [disabled]="atStart" aria-label="Anterior">
+    <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M15.41 7.41 14 6 8 12l6 6 1.41-1.41L10.83 12z"/></svg>
+  </button>
+
+  <div class="pc__viewport" #viewport tabindex="0" aria-label="Carrusel de productos" (scroll)="onViewportScroll()">
+    <div class="pc__rail">
+      <div class="pc-slide" *ngFor="let card of cards; trackBy: trackByIndex">
+        <article class="pc-card" tabindex="0">
+          <header class="pc-card__head"><span class="pc-card__check" aria-hidden="true"></span></header>
+          <div class="pc-card__body">
+            <h3 class="pc-card__title">{{ card.nameProduct }}</h3>
+            <div class="pc-card__id">#{{ card.numberProduct }}</div>
+            <hr class="pc-card__divider" aria-hidden="true" />
+            <div class="pc-card__money">
+              <span class="pc-card__label">{{ getLabel(card) }}</span>
+              <strong class="pc-card__value">${{ card.balanceProductNum.toLocaleString('es-CO') }}</strong>
+            </div>
+            <div class="pc-card__icon-wrap" aria-hidden="true">
+              <img src="/images/Happy.svg" alt="">
+            </div>
+            <div class="pc-card__advice"><p class="pc-card__advice-text">{{ card.detaildProduct }}</p></div>
+          </div>
+          <span class="pc-card__bottom" aria-hidden="true"></span>
+        </article>
+      </div>
+
+      <div class="pc-slide">
+        <article class="pc-card pc-card--promo" tabindex="0">
+          <header class="pc-card__head"><span class="pc-card__check" aria-hidden="true"></span></header>
+          <div class="pc-card__body">
+            <div class="promo__header">
+              <span class="promo__medal">★</span>
+              <span class="promo__badge">Productos recomendados</span>
+            </div>
+            <div class="promo__content">
+              <h3 class="promo__title">¡Conoce nuevos productos de ahorro e inversión para <span class="promo__accent">{{ goalName }}</span>!</h3>
+              <button class="btn" type="button">EXPLORA AHORA</button>
+            </div>
+          </div>
+          <span class="pc-card__bottom pc-card__bottom--orange" aria-hidden="true"></span>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <button class="pc__nav pc__nav--right" type="button" (click)="next()" [disabled]="atEnd" aria-label="Siguiente">
+    <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L12.17 11H4v2h8.17z"/></svg>
+  </button>
+
+  <div class="pc__action">
+    <button class="pc__cta" type="button" disabled>ASOCIAR A OBJETIVO</button>
+  </div>
+</section>
+
+<section class="pc pc--empty" *ngIf="!loading && !cards.length && !error">
+  <p class="pc__empty">No hay productos para mostrar.</p>
+</section>

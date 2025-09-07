@@ -1,0 +1,12 @@
+.sidebar {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 240px;
+  height: calc(100vh - 65px);
+  background-color: var(--color-gris-muy-claro);
+  border-right: 1px solid #dfe3e8;
+  z-index: 1000;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}

@@ -1,0 +1,29 @@
+<section class="home" #homeRoot>
+  <div class="imagen-uno">
+    <div class="enlace-inicio" aria-hidden="false">
+      <a href="/inicio">
+        <img src="/images/home.svg" alt="Inicio" class="icono-casa">
+        Ir al inicio
+      </a>
+    </div>
+
+    <div class="container-hero">
+      <div class="texto">
+        <h2>¡Tu objetivo ha sido agregado exitosamente!</h2>
+        <p class="subtexto">¡Te hemos enviado un correo con la notificación!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-wrap" #goalCardWrap>
+    <app-goal-card></app-goal-card>
+  </div>
+
+  <div class="bg-imagen-dos" #bgImagenDos aria-hidden="true"></div>
+
+  <div class="imagen-dos" #imagenDos>
+    <div class="contenido-imagen-dos">
+      <app-card-carousel></app-card-carousel>
+    </div>
+  </div>
+</section>

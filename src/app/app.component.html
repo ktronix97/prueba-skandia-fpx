@@ -1,0 +1,7 @@
+<app-navbar (toggleSidenav)="handleToggleSidebar()"></app-navbar>
+<aside class="sidebar" *ngIf="isSidebarVisible">
+  <app-sidebar></app-sidebar>
+</aside><main class="main-container">
+  <router-outlet></router-outlet>
+</main>
+<app-footer></app-footer>

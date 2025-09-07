@@ -1,0 +1,122 @@
+.home {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-primary);
+  position: relative;
+  --card-h: 90px;
+  --overlap: 1.5;
+}
+
+.imagen-uno {
+  position: relative;
+  z-index: 1;
+  height: 20vh;
+  min-height: 340px;
+  background:
+    linear-gradient(rgba(7,74,78,0.42), rgba(0,133,243,0.18)),
+    url('/images/Cielo_verde.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blanco);
+}
+
+.container-hero {
+  width: 100%;
+  max-width: 1200px;
+  padding: 8px 18px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.enlace-inicio {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  z-index: 9;
+}
+.enlace-inicio a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.icono-casa { width: 18px; height: 18px; }
+
+.texto {
+  text-align: center;
+  color: #ffffff;
+  z-index: 2;
+  padding: 2px 20px;
+}
+.texto h2 {
+  font-size: clamp(22px, 2.3vw, 30px);
+  margin: 2px 0 4px;
+  font-weight: 800;
+  line-height: 1.04;
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.18);
+}
+.texto .subtexto {
+  margin: 0;
+  padding-top: 2px;
+  font-size: clamp(13px, 1.2vw, 15px);
+  color: rgba(255,255,255,0.92);
+}
+
+.card-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 28px;
+  transform: translateY(calc(-1 * var(--card-h) * var(--overlap)));
+  margin-bottom: 12px;
+  z-index: 3;
+  position: relative;
+}
+.card-wrap app-goal-card {
+  margin-top: 0 !important;
+  z-index: 4;
+  position: relative;
+}
+
+.bg-imagen-dos {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  height: 0;
+  background: url('/images/iStock-480003814@2x.png') center/cover no-repeat;
+  pointer-events: none;
+  z-index: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.imagen-dos {
+  position: relative;
+  min-height: 72vh;
+  padding: 0 28px 40px;
+  margin-top: calc(-1 * var(--card-h) * var(--overlap));
+  background: transparent;
+  z-index: 1;
+}
+.contenido-imagen-dos {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .imagen-uno { height: 38vh; min-height: 260px; }
+  .container-hero { padding: 6px 16px; }
+  .texto { padding: 2px 12px; }
+  .texto h2 { font-size: 22px; }
+  .card-wrap { transform: translateY(calc(-1 * var(--card-h) * var(--overlap))); padding: 0 12px; }
+  .enlace-inicio { top: 8px; left: 12px; }
+  .imagen-dos { padding: 0 16px 50px; margin-top: calc(-1 * var(--card-h) * var(--overlap)); }
+}

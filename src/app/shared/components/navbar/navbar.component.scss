@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+:root{
+  --white:#fff;
+  --border:#e5e7eb;
+  --brand:#3F3F3F;
+  --verde-chillon:#00C83C;
+  --verde-hover:#00b836;
+}
+
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  isolation: isolate;
+  background: transparent;
+
+  &::before{
+    content:"";
+    position:absolute;
+    inset:0 calc(50% - 50vw);
+    background:#fff;
+    box-shadow: inset 0 -1px 0 var(--border);
+    pointer-events:none;
+    z-index:-1;
+  }
+
+  &__inner{
+    width:100%;
+    height:64px;
+    padding:0 24px;
+    padding-left:0;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+
+  &__menu{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:44px;
+    height:64px;
+    border:0;
+    background:transparent;
+    color:var(--verde-chillon);
+    cursor:pointer;
+    &:focus-visible{ outline:2px solid #00C83C; outline-offset:2px; }
+  }
+
+  &__brand{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:var(--brand);
+  }
+
+  &__logo{ height:26px; width:auto; display:block; }
+  &__divider{ width:1px; height:22px; background:#cbd5e1; display:inline-block; }
+
+  &__title-strong{
+    font-family:'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-weight:500;
+    font-size:18px;
+    line-height:23px;
+    color:var(--brand);
+    white-space:nowrap;
+  }
+
+  &__spacer{ flex:1 1 auto; }
+
+  &__actions{
+    display:flex;
+    align-items:center;
+    gap:24px;
+  }
+
+&__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--verde-chillon); // ← Esto aplica el color al <a>
+
+  &:hover {
+    color: var(--verde-hover); // ← Color al pasar el mouse
+  }
+
+  &:visited {
+    color: var(--verde-chillon); // ← Evita el morado de links visitados
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--verde-chillon);
+    outline-offset: 2px;
+  }
+
+  // Asegura que los hijos no sobrescriban el color
+  .navbar__text--green {
+    color: inherit;
+  }
+}
+  &__icon img{ height:20px; width:auto; display:block; }
+
+  &__text--green{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight:700;
+    font-size:14px;
+    line-height:19px;
+    color:var(--verde-chillon);
+    text-decoration:underline;
+    white-space:nowrap;
+  }
+
+  .navbar__link:hover .navbar__text--green{ color:var(--verde-chillon); }
+
+
+  &__icon-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:0;
+    background:transparent;
+    padding:0;
+    cursor:pointer;
+    img{ height:28px; width:28px; display:block; }
+  }
+
+  .navbar__menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #00C83C;
+
+  svg path {
+    stroke: #00C83C;
+    transition: stroke 0.3s ease;
+  }
+
+  &:hover svg path {
+    stroke: darken(#00C83C, 10%);
+  }
+}
+
+  @media (max-width:640px){
+    &__inner{ height:56px; }
+    &__title-strong{ font-size:16px; }
+    &__actions{ gap:12px; }
+  }
+}

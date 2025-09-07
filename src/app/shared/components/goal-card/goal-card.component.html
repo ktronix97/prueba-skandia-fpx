@@ -1,0 +1,42 @@
+<div class="goal-card" role="region" aria-label="Tarjeta objetivo">
+  <div class="goal-card__header">
+    <div class="goal-card__title-row">
+      <h2 class="goal-card__title">{{ goal.title }}</h2>
+      <a href="#" class="goal-card__link">Revisar objetivo</a>
+    </div>
+    <p class="goal-card__subtitle">Categoría: {{ goal.category }}</p>
+  </div>
+
+  <div class="goal-card__meta-grid">
+    <div class="goal-card__item">
+      <p class="label">En esta fecha:</p>
+      <p class="fecha">{{ goal.date }}</p>
+    </div>
+
+    <div class="goal-card__item">
+      <p class="label">Lograrás:</p>
+      <p class="meta">${{ goal.target.toLocaleString('es-CO') }}</p>
+    </div>
+
+    <div class="goal-card__item">
+      <p class="label">
+        <img src="/images/Icon awesome-star.svg" alt="" class="icon" aria-hidden="true" />
+        Ya cuentas con:
+      </p>
+      <p class="total">${{ goal.current.toLocaleString('es-CO') }}</p>
+    </div>
+  </div>
+
+  <div class="goal-card__actions">
+    <p class="goal-card__progress">
+      <img src="/images/Icon awesome-check-circle.svg" alt="" class="icon" aria-hidden="true" />
+      ¡Asocia productos para monitorear su progreso!
+    </p>
+  </div>
+</div>
+
+<div class="goal-footer" aria-hidden="false">
+  <h2>¡Vamos por esos <strong class="currency">${{ goal.target.toLocaleString('es-CO') }}</strong> para <strong class="meta">{{ goal.title }}</strong>!</h2>
+  <p>¡A través de tus productos y nuestros rendimientos podremos lograrlo!</p>
+  <p><strong>Asocia tus productos o adquiere uno nuevo.</strong></p>
+</div>

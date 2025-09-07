@@ -1,0 +1,37 @@
+<nav class="navbar" role="navigation" aria-label="Barra de navegación">
+  <div class="navbar__inner">
+    <!-- Menú (hamburguesa) extremo izquierdo -->
+    <button class="navbar__menu" type="button" aria-label="Abrir menú" (click)="onToggleSidebar()">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <!-- Marca -->
+    <a href="/" class="navbar__brand" aria-label="Inicio">
+      <img class="navbar__logo" src="/images/Group 123.svg" alt="Skandia">
+      <span class="navbar__divider" aria-hidden="true"></span>
+      <strong class="navbar__title-strong">Plan Financiero Digital - FPX</strong>
+    </a>
+
+    <div class="navbar__spacer" aria-hidden="true"></div>
+
+    <!-- Acciones derecha -->
+    <div class="navbar__actions">
+      <a href="#planner" class="navbar__link" aria-label="Tu Financial Planner">
+        <span class="navbar__icon" aria-hidden="true"><img src="/images/Happy.svg" alt=""></span>
+        <span class="navbar__text navbar__text--green">Tu Financial Planner</span>
+      </a>
+
+      <a href="#usuario" class="navbar__link" aria-label="Aportes">
+        <span class="navbar__icon" aria-hidden="true"><img src="/images/hand3.svg" alt=""></span>
+        <span class="navbar__text navbar__text--green">Aportes</span>
+      </a>
+
+      <!-- Ícono ayuda (círculo naranja) último -->
+      <button class="navbar__icon-btn" type="button" aria-label="Ayuda">
+        <img src="/images/comp faq.svg" alt="">
+      </button>
+    </div>
+  </div>
+</nav>
