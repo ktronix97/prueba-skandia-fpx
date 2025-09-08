@@ -20,8 +20,13 @@ export class ProductCarouselComponent implements OnInit, AfterViewInit {
   goalName = 'Conocer mi sobrino';
   atStart = true;
   atEnd = false;
+  showRecommendation = false;
 
   constructor(private cardService: CardService) {}
+
+    toggleRecommendation() {
+      this.showRecommendation = !this.showRecommendation;
+    }
 
   ngOnInit(): void {
     this.cardService.getCards().subscribe({

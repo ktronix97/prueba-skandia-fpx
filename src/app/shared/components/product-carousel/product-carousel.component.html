@@ -47,13 +47,8 @@
         <article class="pc-card pc-card--promo" tabindex="0">
           <header class="pc-card__head"><span class="pc-card__check" aria-hidden="true"></span></header>
           <div class="pc-card__body">
-            <div class="promo__header">
-              <span class="promo__medal">★</span>
-              <span class="promo__badge">Productos recomendados</span>
-            </div>
             <div class="promo__content">
-              <h3 class="promo__title">¡Conoce nuevos productos de ahorro e inversión para <span class="promo__accent">{{ goalName }}</span>!</h3>
-              <button class="btn" type="button">EXPLORA AHORA</button>
+              <button class="btn" type="button"(click)="toggleRecommendation()"><u>EXPLORA AHORA</u></button>
             </div>
           </div>
           <span class="pc-card__bottom pc-card__bottom--orange" aria-hidden="true"></span>
@@ -70,6 +65,40 @@
     <button class="pc__cta" type="button" disabled>ASOCIAR A OBJETIVO</button>
   </div>
 </section>
+<!-- Recomendación que aparece al presionar el botón -->
+<section *ngIf="showRecommendation" class="recommendation-section">
+  <div class="recommendation-content">
+    <div class="pc-slide-recommendation">
+      <article class="pc-card pc-card--recommendation" tabindex="0">
+        <header class="pc-card__head">
+          <span class="pc-card__check" aria-hidden="true"></span>
+        </header>
+
+        <div class="pc-card__body">
+          <div class="promo__header">
+            <div class="promo__badge">Ahorro e inversión 💚</div>
+          </div>
+
+          <p class="promo__title">
+            ¡Fondo de inversión Colectiva, la acción para potenciar tu capital y hacer real tu objetivo!
+          </p>
+          <a class="promo__link" href="#">Conoce más</a>
+          <ul class="promo__benefits">
+            <li>Rentabilidades mínimas del 3% anuales</li>
+            <li>4.000 clientes confían en este producto</li>
+          </ul>
+
+
+        </div>
+
+        <span class="pc-card__bottom pc-card__bottom--orange" aria-hidden="true"></span>
+      </article>
+
+      <img src="/images/Group 9764.svg" alt="Cerrar" class="close-icon" (click)="toggleRecommendation()">
+    </div>
+  </div>
+</section>
+
 
 <section class="pc pc--empty" *ngIf="!loading && !cards.length && !error">
   <p class="pc__empty">No hay productos para mostrar.</p>
