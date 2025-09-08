@@ -73,30 +73,27 @@
         <header class="pc-card__head">
           <span class="pc-card__check" aria-hidden="true"></span>
         </header>
-
         <div class="pc-card__body">
           <div class="promo__header">
             <div class="promo__badge">Ahorro e inversión 💚</div>
           </div>
-
           <p class="promo__title">
             ¡Fondo de inversión Colectiva, la acción para potenciar tu capital y hacer real tu objetivo!
           </p>
           <a class="promo__link" href="#">Conoce más</a>
           <ul class="promo__benefits">
-            <li>Rentabilidades mínimas del 3% anuales</li>
-            <li>4.000 clientes confían en este producto</li>
+            <p><img src="/images/world.svg" alt="" class="icon" aria-hidden="true" /> Rentabilidades mínimas del 3% anuales</p>
+            <p><img src="/images/profile.svg" alt="" class="icon" aria-hidden="true" /> 4.000 clientes confían en este producto</p>
           </ul>
-
-
         </div>
-
         <span class="pc-card__bottom pc-card__bottom--orange" aria-hidden="true"></span>
+        <button class="pc__nav pc__nav--right" type="button" (click)="next()" [disabled]="atEnd" aria-label="Siguiente">
+          <img src="/images/Group 9764.svg" alt="Cerrar recomendación" class="close-icon" (click)="toggleRecommendation()" />
+        </button>
       </article>
-
-      <img src="/images/Group 9764.svg" alt="Cerrar" class="close-icon" (click)="toggleRecommendation()">
     </div>
   </div>
+
 </section>
 
 
