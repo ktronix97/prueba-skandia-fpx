@@ -1,7 +1,41 @@
-# PruebaTecnica
+# 🧪 Prueba Técnica – Skandia FPX
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Aplicación desarrollada en Angular 19.2.15 como parte de una prueba técnica. Incluye componentes visuales responsivos, arquitectura modular, consumo de APIs REST, y pruebas unitarias con Jasmine/Karma.
 
+---
+
+## 🚀 Tecnologías utilizadas
+
+- **Angular 19.2.15** – Framework principal
+- **TypeScript** – Tipado estático
+- **SCSS + BEM** – Estilos modulares y mantenibles
+- **RxJS** – Programación reactiva
+- **Jasmine + Karma** – Pruebas unitarias
+- **MockAPI** – Simulación de datos
+- **Responsive Design** – Layout adaptable y coherencia cromática
+
+---
+
+## 📦 Estructura del proyecto
+
+```bash
+src/
+├── app/
+│   ├── home/                  # Página principal con layout dinámico
+│   ├── shared/components/     # Componentes reutilizables
+│   │   ├── navbar/            # Barra de navegación
+│   │   ├── sidebar/           # Menú lateral
+│   │   ├── goal-card/         # Tarjeta de objetivo
+│   │   ├── product-carousel/  # Carrusel de productos
+│   └── core/services/         # Servicios (API, lógica de negocio)
+
+
+🧑‍💻 Instalación y ejecución
+    Instala dependencias:
+    ```bash
+    npm install
+    ```
+   
 ## Development server
 
 To start a local development server, run:
@@ -43,16 +77,6 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ```bash
 ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
 ## Additional Resources
 
